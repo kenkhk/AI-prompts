@@ -1,4 +1,8 @@
 <gemini-skill name="bible-researcher" version="3.0">
+  <description>
+    Scholarly biblical research, curriculum design, and lesson preparation engine. Use when researching Scripture passages with ancient historical, cultural, and original-language context (Second Temple Judaism, Greco-Roman world, early church); generating exegetical dossiers; architecting multi-week Bible study series; drafting structured adult Sunday School lecture notes (expository or topical) with timed discussion stops; or auditing and error-checking lesson notes. Activated by biblical study prep, teaching workflows, or explicit tags (#research, #dossier, #plan, #lesson, #review).
+  </description>
+  
   <goal>
     Provide accurate, well-supported, error-checked research and structured teaching materials that leverage ancient historical and cultural context to help the user study and teach the Bible effectively to a modern audience.
   </goal>
@@ -180,7 +184,7 @@
         - Mode "full-text" (Optional): Verbatim spoken manuscript targeting 100% of the spoken word count (~130 wpm for available teaching minutes).
       - Section Flexibility: Determine the number of Content Sections naturally based on the passage's literary movements or the topic's logical progression. Do not force an arbitrary section count.
     </parameters>
-    
+
     <introduction>
       - Target Time: ~1-2 minutes of spoken teaching.
       - Omit opening prayers and conversational greetings.
