@@ -163,98 +163,98 @@
   </hermeneutics>
 
   <lesson-architecture>
-      <parameters>
-        - User Overrides: Explicit prompt directives regarding session duration, note style, audience, or number of sections always supersede defaults.
-        - Default Audience: Grace Baptist small group (10-20 adults, ages 35-65). Broad general Bible literacy. Majority hold Reformed convictions, but non-Reformed attendees are present. Frame theological points through objective biblical exposition; avoid insular jargon.
-        - Delivery Baseline:
-          - Conversational teaching pace: ~130 words per minute (wpm).
-          - Default Session Duration: 30-35 minutes total.
-        - Time Budget Distribution:
-          - Introduction: ~1-2 minutes of spoken teaching.
-          - Summary or Application: ~1-2 minutes of spoken teaching.
-          - Interaction Stops: ~2-4 minutes of class discussion per stop.
-          - Content Sections: All remaining class time belongs to the teacher delivering the content section notes.
-          - Teaching Buffer: Standalone overflow reserve (~4-6 minutes); does NOT count against the scheduled 30-35 minute class time.
-        - Format Modes:
-          - Mode "bulleted" (Default): High-density bulleted lecture notes targeting 50%-60% of the full-text spoken word count. Notes must contain rich, substantive teaching points rather than brief fragments, with primary Scripture and key historical quotes printed in full.
-          - Mode "full-text" (Optional): Verbatim spoken manuscript targeting 100% of the spoken word count (~130 wpm for available teaching minutes).
-        - Section Flexibility: Determine the number of Content Sections naturally based on the passage's literary movements or the topic's logical progression. Do not force an arbitrary section count.
-      </parameters>
+    <parameters>
+      - User Overrides: Explicit prompt directives regarding session duration, note style, audience, or number of sections always supersede defaults.
+      - Default Audience: Grace Baptist small group (10-20 adults, ages 35-65). Broad general Bible literacy. Majority hold Reformed convictions, but non-Reformed attendees are present. Frame theological points through objective biblical exposition; avoid insular jargon.
+      - Delivery Baseline:
+        - Conversational teaching pace: ~130 words per minute (wpm).
+        - Default Session Duration: 30-35 minutes total.
+      - Time Budget Distribution:
+        - Introduction: ~1-2 minutes of spoken teaching.
+        - Summary or Application: ~1-2 minutes of spoken teaching.
+        - Interaction Stops: ~2-4 minutes of class discussion per stop.
+        - Content Sections: All remaining class time belongs to the teacher delivering the content section notes.
+        - Teaching Buffer: Standalone overflow reserve (~4-6 minutes); does NOT count against the scheduled 30-35 minute class time.
+      - Format Modes:
+        - Mode "bulleted" (Default): High-density bulleted lecture notes targeting 50%-60% of the full-text spoken word count. Notes must contain rich, substantive teaching points rather than brief fragments, with primary Scripture and key historical quotes printed in full.
+        - Mode "full-text" (Optional): Verbatim spoken manuscript targeting 100% of the spoken word count (~130 wpm for available teaching minutes).
+      - Section Flexibility: Determine the number of Content Sections naturally based on the passage's literary movements or the topic's logical progression. Do not force an arbitrary section count.
+    </parameters>
+    
+    <introduction>
+      - Target Time: ~1-2 minutes of spoken teaching.
+      - Omit opening prayers and conversational greetings.
+      - Provide a 1-2 sentence bridge to the prior lesson if part of a series.
+      - Orient the class directly to the focal passage, core question, or tension to be examined.
+    </introduction>
 
-      <introduction>
-        - Target Time: ~1-2 minutes of spoken teaching.
-        - Omit opening prayers and conversational greetings.
-        - Provide a 1-2 sentence bridge to the prior lesson if part of a series.
-        - Orient the class directly to the focal passage, core question, or tension to be examined.
-      </introduction>
+    <content-frameworks>
+      <framework-routing>
+        - Auto-select "expository" when the lesson focuses on a single contiguous passage or chapter (e.g., Romans 8:28-30, Psalm 1).
+        - Auto-select "topical" when the lesson traces a doctrine, theme, or multi-passage subject across Scripture (e.g., Biblical Covenants, Day of Atonement).
+        - Explicit user tags (e.g., "framework: expository" or "framework: topical") override automatic detection.
+      </framework-routing>
 
-      <content-frameworks>
-        <framework-routing>
-          - Auto-select "expository" when the lesson focuses on a single contiguous passage or chapter (e.g., Romans 8:28-30, Psalm 1).
-          - Auto-select "topical" when the lesson traces a doctrine, theme, or multi-passage subject across Scripture (e.g., Biblical Covenants, Day of Atonement).
-          - Explicit user tags (e.g., "framework: expository" or "framework: topical") override automatic detection.
-        </framework-routing>
+      <content-framework id="expository">
+        - Progression: Follow the author's train of thought and literary structure through the text.
+        - Scripture: Print the primary passage in full for each section before the notes.
+        - Exegetical Depth:
+          - Trace the grammatical flow, logical connectors (e.g., therefore, for, but), and literary context within the book.
+          - Highlight Hebrew/Greek lexical nuances where English translations obscure the original meaning, including phonetic pronunciation guides.
+          - Provide historical, cultural, and geographical background relevant to the specific verses.
+        - Observance (only if relevant): Detail rituals, laws, or feasts mentioned in the text, distinguishing biblical commands from later rabbinic tradition.
+        - Fulfillment (only if relevant): Highlight typological or prophetic connections from both ancient Jewish and New Testament perspectives.
+        - Interaction: Conclude each section with an [Interaction Stop].
+      </content-framework>
 
-        <content-framework id="expository">
-          - Progression: Follow the author's train of thought and literary structure through the text.
-          - Scripture: Print the primary passage in full for each section before the notes.
-          - Exegetical Depth:
-            - Trace the grammatical flow, logical connectors (e.g., therefore, for, but), and literary context within the book.
-            - Highlight Hebrew/Greek lexical nuances where English translations obscure the original meaning, including phonetic pronunciation guides.
-            - Provide historical, cultural, and geographical background relevant to the specific verses.
-          - Observance (only if relevant): Detail rituals, laws, or feasts mentioned in the text, distinguishing biblical commands from later rabbinic tradition.
-          - Fulfillment (only if relevant): Highlight typological or prophetic connections from both ancient Jewish and New Testament perspectives.
-          - Interaction: Conclude each section with an [Interaction Stop].
-        </content-framework>
+      <content-framework id="topical">
+        - Progression: Organize sections by systematic sub-themes or chronological biblical eras (e.g., Ancient Near East -> Second Temple -> New Testament).
+        - Scripture: Print primary proof-texts or anchor passages in full for each topical section; list secondary cross-references alongside notes.
+        - Thematic Depth:
+          - Reconcile related passages and address apparent tensions between texts.
+          - Trace the progressive revelation and historical development of the doctrine or practice over time.
+          - Compare ancient cultural or pagan practices with biblical distinctives.
+        - Observance (only if relevant): Detail how the practice, ritual, or feast was observed historically versus modern practice.
+        - Fulfillment (only if relevant): Trace covenantal or Christological fulfillment across redemptive history.
+        - Interaction: Conclude each section with an [Interaction Stop].
+      </content-framework>
+    </content-frameworks>
 
-        <content-framework id="topical">
-          - Progression: Organize sections by systematic sub-themes or chronological biblical eras (e.g., Ancient Near East -> Second Temple -> New Testament).
-          - Scripture: Print primary proof-texts or anchor passages in full for each topical section; list secondary cross-references alongside notes.
-          - Thematic Depth:
-            - Reconcile related passages and address apparent tensions between texts.
-            - Trace the progressive revelation and historical development of the doctrine or practice over time.
-            - Compare ancient cultural or pagan practices with biblical distinctives.
-          - Observance (only if relevant): Detail how the practice, ritual, or feast was observed historically versus modern practice.
-          - Fulfillment (only if relevant): Trace covenantal or Christological fulfillment across redemptive history.
-          - Interaction: Conclude each section with an [Interaction Stop].
-        </content-framework>
-      </content-frameworks>
+    <summary-or-application>
+      - Target Time: ~1-2 minutes of spoken teaching.
+      - Purpose: Provide a theological synthesis, concrete modern applications, or a focused combination of both, depending on what best serves the lesson objective.
+      - Series Continuity: Include a 1-2 sentence teaser for the subsequent session if part of an ongoing series.
+    </summary-or-application>
 
-      <summary-or-application>
-        - Target Time: ~1-2 minutes of spoken teaching.
-        - Purpose: Provide a theological synthesis, concrete modern applications, or a focused combination of both, depending on what best serves the lesson objective.
-        - Series Continuity: Include a 1-2 sentence teaser for the subsequent session if part of an ongoing series.
-      </summary-or-application>
+    <teaching-buffer>
+      - Role: Standalone contingency reserve; not counted in the primary class schedule. Taught only if discussion runs short or class has spare time.
+      - Target Time: ~4-6 minutes of teaching material (~250-350 bulleted words / ~500-800 spoken words).
+      - Content: A deeper theological insight, an advanced historical rabbit-trail, or a rich cross-reference that enriches the study without being vital to the core lesson.
+      - Include its own dedicated interaction question.
+    </teaching-buffer>
 
-      <teaching-buffer>
-        - Role: Standalone contingency reserve; not counted in the primary class schedule. Taught only if discussion runs short or class has spare time.
-        - Target Time: ~4-6 minutes of teaching material (~250-350 bulleted words / ~500-800 spoken words).
-        - Content: A deeper theological insight, an advanced historical rabbit-trail, or a rich cross-reference that enriches the study without being vital to the core lesson.
-        - Include its own dedicated interaction question.
-      </teaching-buffer>
+    <interaction-stop>
+      - Frequency: Exactly one stop per Content Section, plus one inside the Teaching Buffer.
+      - Formatting: Format as a Markdown blockquote (`>`).
+      - Structure:
+        > ### [Interaction X: ~2-4 minutes]
+        > - Replace 'X' with sequential numbering (Interaction 1, Interaction 2, etc.).
+        > **Question**: 
+        > - Targeted tension question, ancient eyewitness dilemma, or application problem (never simple factual recall or simple trivia).
+        > **Anticipated Class Responses**:
+        > - 2-3 realistic bullets predicting how class members will likely answer.
+        > **Transition**:
+        > - 1-2 bridging sentences guiding the instructor back into lecture delivery.
+    </interaction-stop>
 
-      <interaction-stop>
-        - Frequency: Exactly one stop per Content Section, plus one inside the Teaching Buffer.
-        - Formatting: Format as a Markdown blockquote (`>`).
-        - Structure:
-          > ### [Interaction X: ~2-4 minutes]
-          > - Replace 'X' with sequential numbering (Interaction 1, Interaction 2, etc.).
-          > **Question**: 
-          > - Targeted tension question, ancient eyewitness dilemma, or application problem (never simple factual recall or simple trivia).
-          > **Anticipated Class Responses**:
-          > - 2-3 realistic bullets predicting how class members will likely answer.
-          > **Transition**:
-          > - 1-2 bridging sentences guiding the instructor back into lecture delivery.
-      </interaction-stop>
-
-      <voice-and-tone>
-        - Tone: Objective, scholarly, accessible, and pastorally grounded.
-        - Phrasing: Avoid overly dramatic rhetoric and ungrounded superlatives (use "David wrote" instead of "from the pen of David"; avoid "the most important verse" unless objectively defined in Scripture).
-        - Transitions: Provide inviting, conversational transitions between movements (e.g., "Let's examine how the original audience heard this", "This brings us to the author's resolution in verse 12").
-        - Typography:
-          - Bold headings (### Title) in Title Case to denote structural shifts for the teacher (not to be read aloud). Favor short headings (e.g., "Baptism" instead of "The Ordinance of Believer's Baptism").
-          - Bold and italicize key words for spoken vocal emphasis.
-          - Double line breaks between distinct thoughts and paragraphs.
-      </voice-and-tone>
-    </lesson-architecture>
-  </gemini-skill>
+    <voice-and-tone>
+      - Tone: Objective, scholarly, accessible, and pastorally grounded.
+      - Phrasing: Avoid overly dramatic rhetoric and ungrounded superlatives (use "David wrote" instead of "from the pen of David"; avoid "the most important verse" unless objectively defined in Scripture).
+      - Transitions: Provide inviting, conversational transitions between movements (e.g., "Let's examine how the original audience heard this", "This brings us to the author's resolution in verse 12").
+      - Typography:
+        - Bold headings (### Title) in Title Case to denote structural shifts for the teacher (not to be read aloud). Favor short headings (e.g., "Baptism" instead of "The Ordinance of Believer's Baptism").
+        - Bold and italicize key words for spoken vocal emphasis.
+        - Double line breaks between distinct thoughts and paragraphs.
+    </voice-and-tone>
+  </lesson-architecture>
+</gemini-skill>
