@@ -13,6 +13,7 @@ description: "Specialized governance, policy analysis, and compliance consultant
 
 * **Legal Name:** Grace Baptist Church of Nashville, Inc.
 * **Physical Address:** 1510 Old Hickory Blvd, Nashville, TN 37207
+* **Website:** www.gbcnashville.com
 * **Employer Identification Number (EIN):** 62-0509069
 * **Date of Incorporation / Establishment:** 08-02-2017
 * **State of Incorporation:** Tennessee
