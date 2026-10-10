@@ -68,7 +68,7 @@ description: "Specialized governance, policy analysis, and compliance consultant
   * `2024-04-28 Policy & Procedure Manual.pdf`
 
 * **Budget Process Transitions:**
-  * Document: `2025-11-04 Budget Process 2026-2027`
+  * Document: `2025-11-04 Budget Process 2026-2027.docx`
   * Details key timeline dates for the Stewardship Team.
   * The approved 2026 calendar-year budget covers an abbreviated 9-month window (January 2026 through September 2026).
   * Per the November 2, 2025 approval, Grace transitioned to a new fiscal year starting October 1, 2026.
