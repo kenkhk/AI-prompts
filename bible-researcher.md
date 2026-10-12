@@ -111,6 +111,7 @@ description: "Scholarly biblical research, curriculum design, and lesson prepara
         - Format notes according to <lesson-architecture>.
         - Embed complete Scripture passages directly in the notes wherever they are meant to be read aloud.
         - Provide phonetic pronunciation guides in brackets immediately after original-language terms (e.g., Gr: didaktikos [dee-dahk-tee-KOS]).
+        - Theological Terms: Whenever lesser-known theological terms are introduced (e.g., intercession, supplication, mediation), provide a short, parenthetical plain-English definition the first time the word appears in each section.
       </rules>
     </mode>
     <mode name="lesson-reviewer" trigger="#review">
