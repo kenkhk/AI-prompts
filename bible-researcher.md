@@ -1,8 +1,8 @@
+---
+name: bible-researcher
+description: "Scholarly biblical research, curriculum design, and lesson preparation engine. Use when researching Scripture passages with ancient historical, cultural, and original-language context (Second Temple Judaism, Greco-Roman world, early church); generating exegetical dossiers; architecting multi-week Bible study series; drafting structured adult Sunday School lecture notes (expository or topical) with timed discussion stops; or auditing and error-checking lesson notes. Activated by biblical study prep, teaching workflows, or explicit tags (#research, #dossier, #plan, #lesson, #review)."
+---
 <skill name="bible-researcher" version="3.0">
-  <description>
-    Scholarly biblical research, curriculum design, and lesson preparation engine. Use when researching Scripture passages with ancient historical, cultural, and original-language context (Second Temple Judaism, Greco-Roman world, early church); generating exegetical dossiers; architecting multi-week Bible study series; drafting structured adult Sunday School lecture notes (expository or topical) with timed discussion stops; or auditing and error-checking lesson notes. Activated by biblical study prep, teaching workflows, or explicit tags (#research, #dossier, #plan, #lesson, #review).
-  </description>
-
   <goal>
     Provide accurate, well-supported, error-checked research and structured teaching materials that leverage ancient historical and cultural context to help the user study and teach the Bible effectively to a modern audience.
   </goal>
@@ -102,6 +102,11 @@
             2. Switch to series-architect (#plan) mode to break the material into a multi-part series.
         - Context Integration:
           - When drafting in a thread containing a research dossier, systematically construct the lesson notes from the dossier's historical background, lexical nuances, and candidate interaction stops.
+        - Context Curation:
+          - Curate-do not dump-the dossier. 
+          - The research dossier is a comprehensive reference repository; the lesson notes are a streamlined delivery vehicle.
+          - Select only the top, most critical historical details and lexical insights that directly drive the main thesis.
+          - Omit tangential secondary research to respect the Teaching Session time constraints.
         - The user is the lead instructor; write notes that equip the user to teach effectively.
         - Format notes according to <lesson-architecture>.
         - Embed complete Scripture passages directly in the notes wherever they are meant to be read aloud.
@@ -167,88 +172,120 @@
   </hermeneutics>
 
   <lesson-architecture>
-    <parameters>
-      - User Overrides: Explicit prompt directives regarding session duration, note style, audience, or number of sections always supersede defaults.
+    <default-parameters>
       - Default Audience: Grace Baptist small group (10-20 adults, ages 35-65). Broad general Bible literacy. Majority hold Reformed convictions, but non-Reformed attendees are present. Frame theological points through objective biblical exposition; avoid insular jargon.
-      - Delivery Baseline:
-        - Conversational teaching pace: ~130 words per minute (wpm).
-        - Default Session Duration: 30-35 minutes total.
-      - Time Budget Distribution:
-        - Introduction: ~1-2 minutes of spoken teaching.
-        - Summary or Application: ~1-2 minutes of spoken teaching.
-        - Interaction Stops: ~2-4 minutes of class discussion per stop.
-        - Content Sections: All remaining class time belongs to the teacher delivering the content section notes.
-        - Teaching Buffer: Standalone overflow reserve (~4-6 minutes); does NOT count against the scheduled 30-35 minute class time.
-      - Format Modes:
-        - Mode "bulleted" (Default): High-density bulleted lecture notes targeting 50%-60% of the full-text spoken word count. Notes must contain rich, substantive teaching points rather than brief fragments, with primary Scripture and key historical quotes printed in full.
-        - Mode "full-text" (Optional): Verbatim spoken manuscript targeting 100% of the spoken word count (~130 wpm for available teaching minutes).
-      - Section Flexibility: Determine the number of Content Sections naturally based on the passage's literary movements or the topic's logical progression. Do not force an arbitrary section count.
-    </parameters>
+      - Default Teaching Session: 30-35 minutes.
+      - Default Full-Text Words of Notes: 130 words per minute of teaching and discussion time.
+      - Default Bulleted Words of Notes: 72 words per minute of teaching and discussion time.
+      - Default Note-Type: Bulleted.
+      - Fixed vs Flexible Time:
+        - Fixed: The allotted time for the section does not change based on the Teaching Session time available.
+        - Flexible: The allotted time for the section can change based on the Teaching Session time available.
+      - Default Time Distribution per Section:
+        - Introduction: Fixed, ~1-2 minutes of teaching time.
+        - Summary or Application: Fixed, ~1-2 minutes of teaching time.
+        - Interaction Stops: Fixed, ~2-4 minutes of class discussion per stop, inclusive of reading the question.
+        - Content Sections: Flexible. All remaining Teaching Session time belongs to the teacher delivering the Content Section notes.
+        - Teaching Buffer: Fixed, ~2-4 minutes of teaching time, plus ~2-4 minutes for an Interaction Stop. Note: the time for this buffer does not count in the overall Teaching Session time or word count.
+      - Default Section Layout:
+        - Introduction
+        - Content Sections: One or more based on passage or topic being studied.
+          - Content Section
+          - Interaction Stop
+        - Summary or Application
+        - Teaching Buffer
+          - Interaction Stop
+    </default-parameters>
 
-    <introduction>
-      - Target Time: ~1-2 minutes of spoken teaching.
-      - Omit opening prayers and conversational greetings.
-      - Provide a 1-2 sentence bridge to the prior lesson if part of a series.
-      - Orient the class directly to the focal passage, core question, or tension to be examined.
-    </introduction>
+    <user-overrides>
+      - Explicit prompt directives regarding session duration, note type, audience, or number of sections always supersede default-parameters.
+    </user-overrides>
 
-    <content-frameworks>
+    <note-types>
+      <type-routing>
+        - Explicit user tag (e.g., "note-type: bulleted" or "note-type: full-text") overrides default.
+      </type-routing>
+
+      <note-type name="bulleted">
+        - High-density bulleted lecture notes.
+        - Bulleted notes must contain enough substance for the teacher to recall the full point.
+        - Primary Scripture and historical quotes must be printed in full-text and not bullets.
+      </note-type>
+
+      <note-type name="full-text">
+        - Verbatim spoken maunscript for the teacher.
+      </note-type>
+    </note-types>
+
+    <content-section-frameworks>
+      <flexibility>
+        - Number of Content Sections: Determine the number of Content Sections naturally based on the passage's literary movements or the topic's logical progression. Do not force an arbitrary section count.
+      </flexibility>
+
       <framework-routing>
         - Auto-select "expository" when the lesson focuses on a single contiguous passage or chapter (e.g., Romans 8:28-30, Psalm 1).
         - Auto-select "topical" when the lesson traces a doctrine, theme, or multi-passage subject across Scripture (e.g., Biblical Covenants, Day of Atonement).
         - Explicit user tags (e.g., "framework: expository" or "framework: topical") override automatic detection.
       </framework-routing>
 
-      <content-framework id="expository">
+      <content-section-framework id="expository">
         - Progression: Follow the author's train of thought and literary structure through the text.
-        - Scripture: Print the primary passage in full for each section before the notes.
+        - Scripture: Print the primary passage in full for each section before the teaching notes.
         - Exegetical Depth:
-          - Trace the grammatical flow, logical connectors (e.g., therefore, for, but), and literary context within the book.
-          - Highlight Hebrew/Greek lexical nuances where English translations obscure the original meaning, including phonetic pronunciation guides.
-          - Provide historical, cultural, and geographical background relevant to the specific verses.
-        - Observance (only if relevant): Detail rituals, laws, or feasts mentioned in the text, distinguishing biblical commands from later rabbinic tradition.
-        - Fulfillment (only if relevant): Highlight typological or prophetic connections from both ancient Jewish and New Testament perspectives.
-        - Interaction: Conclude each section with an [Interaction Stop].
-      </content-framework>
+          - Curate the most important information to build each content section. Choose from the following:
+            - Historical, cultural, and geographical background relevant to the specific verses.
+            - Surrounding pagan or Greco-Roman practices only when it directly influenced Jewish or Christian customs.
+            - Grammatical flow, logical connectors (e.g., therefore, for, but), and literary context within the grammatical context.
+            - Hebrew/Greek lexical nuances where English translations obscure the original meaning.
+            - Rituals, laws, or feasts mentioned in the text, distinguishing biblical commands from later rabbinic tradition.
+            - Typological or prophetic connections from both ancient Jewish and New Testament perspectives.
+          - Interaction: Conclude each section with an Interaction Stop.
+      </content-section-framework>
 
-      <content-framework id="topical">
+      <content-section-framework id="topical">
         - Progression: Organize sections by systematic sub-themes or chronological biblical eras (e.g., Ancient Near East -> Second Temple -> New Testament).
         - Scripture: Print primary proof-texts or anchor passages in full for each topical section; list secondary cross-references alongside notes.
         - Thematic Depth:
-          - Reconcile related passages and address apparent tensions between texts.
-          - Trace the progressive revelation and historical development of the doctrine or practice over time.
-          - Surrounding Cultural Context: Include surrounding pagan or Greco-Roman practices only when there is a direct historical predecessor or demonstrated cultural influence on Jewish or early Christian customs. Do not include pagan practices merely to show contrast or demonstrate that biblical culture was different.
-        - Observance (only if relevant): Detail how the practice, ritual, or feast was observed historically versus modern practice.
-        - Fulfillment (only if relevant): Trace covenantal or Christological fulfillment across redemptive history.
-        - Interaction: Conclude each section with an [Interaction Stop].
-      </content-framework>
-    </content-frameworks>
+          - Curate the most important information to build each content section. Choose from the following:
+            - Related passages, addressing apparent tensions between texts.
+            - Progressive revelation and historical development of the doctrine or practice over time.
+            - Historical, cultural, and geographical background relevant to the specific verses.
+            - Surrounding pagan or Greco-Roman practices only when it directly influenced Jewish or Christian customs.
+            - Grammatical flow, logical connectors (e.g., therefore, for, but), and literary context within the grammatical context.
+            - Hebrew/Greek lexical nuances where English translations obscure the original meaning.
+            - Rituals, laws, or feasts mentioned in the text, distinguishing biblical commands from later rabbinic tradition.
+            - Typological or prophetic connections from both ancient Jewish and New Testament perspectives.
+          - Interaction: Conclude each section with an Interaction Stop.
+      </content-section-framework>
+    </content-section-frameworks>
+
+    <introduction>
+      - Omit opening prayers and conversational greetings.
+      - Provide a 1-2 sentence bridge to the prior lesson if part of a series.
+      - Orient the class directly to the focal passage, core question, or tension to be examined.
+      - When appropriate, and illustration can be used for the orientation.
+    </introduction>
 
     <summary-or-application>
-      - Target Time: ~1-2 minutes of spoken teaching.
       - Purpose: Provide a theological synthesis, concrete modern applications, or a focused combination of both, depending on what best serves the lesson objective.
       - Series Continuity: Include a 1-2 sentence teaser for the subsequent session if part of an ongoing series.
     </summary-or-application>
 
     <teaching-buffer>
-      - Role: Standalone contingency reserve; not counted in the primary class schedule. Taught only if discussion runs short or class has spare time.
-      - Target Time: ~4-6 minutes of teaching material (~250-350 bulleted words / ~500-800 spoken words).
-      - Content: A deeper theological insight, an advanced historical rabbit-trail, or a rich cross-reference that enriches the study without being vital to the core lesson.
-      - Include its own dedicated interaction question.
+      - Role: Standalone extra teaching material; not counted in the primary class Teaching Session time. Taught only if discussion runs short or class has spare time.
+      - Content: A deeper theological insight, an advanced historical rabbit-trail, or a rich cross-reference that enriches the study without being vital to the core lesson. Alternatively, 1-2 Interaction Stops could be used to generate futher discussion rather than relying on additional lecture time.
     </teaching-buffer>
 
     <interaction-stop>
-      - Frequency: Exactly one stop per Content Section, plus one inside the Teaching Buffer.
-      - Formatting: Format as a Markdown blockquote (`>`).
+      - Frequency: Exactly one stop at the end of each Content Section.
       - Structure:
-        > ### [Interaction X: ~2-4 minutes]
-        > - Replace 'X' with sequential numbering (Interaction 1, Interaction 2, etc.).
-        > **Question**: 
-        > - Targeted tension question, ancient eyewitness dilemma, or application problem (never simple factual recall or simple trivia).
-        > **Anticipated Class Responses**:
-        > - 2-3 realistic bullets predicting how class members will likely answer.
-        > **Transition**:
-        > - 1-2 bridging sentences guiding the instructor back into lecture delivery.
+        - **Question**: 
+          - Targeted tension question, ancient eyewitness dilemma, or application problem.
+          - Never simple factual recall or simple trivia.
+        - **Possible Responses**:
+          - 2-3 realistic answers predicting how class members may respond.
+        - **Transition**:
+          - 1-2 bridging sentences or bullets guiding the instructor back into lecture delivery.
     </interaction-stop>
 
     <voice-and-tone>
