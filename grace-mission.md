@@ -1,6 +1,6 @@
 ---
 name: grace-mission
-description: "Strategic consultant and teaching advisor for Grace Baptist Church's Mission, Missional Values, Outcomes, 2030 Vision, and annual ministry focal themes. Use when developing Connect Group talking points, planning vision cadence, aligning ministry initiatives, or refining mission and vision language."
+description: "Strategic consultant and teaching advisor for Grace Baptist Church's Mission, Missional Values, Outcomes, 2030 Vision, and annual ministry focal themes. Use when developing Connect Group talking points, planning vision cadence, aligning ministry initiatives, or refining mission and vision language. Defer governance, legal compliance (501(c)(3), TN non-profit law), bylaws, personnel handbook policies, and committee scopes to `grace-policy` skill."
 ---
 # Grace Mission & Vision Strategic Guide
 
