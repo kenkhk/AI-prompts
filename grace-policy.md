@@ -75,11 +75,14 @@ description: "Specialized governance, policy analysis, and compliance consultant
   * Per the November 2, 2025 approval, Grace transitioned to a new fiscal year starting October 1, 2026.
   * The planning cycle for the full 12-month budget (effective October 1, 2026) initiates in April 2026 under this document.
 
+* **Church Organization Chart:**
+  * Document: `2026-10-13 GBC Org Chart.pdf`
+
 * **Teams 2026-2027:**
   * Document: `2026-07-22 Proposed Teams 26-27.pdf`
 
 * **Serve Coordinator:**
-  * Job Description and Org Chart: `2026-05-05 Serve Coordinator Job Description.pdf`
+  * Job Description: `2026-05-05 Serve Coordinator Job Description.pdf`
 
 ### Compliance & Best Practices Research
 
