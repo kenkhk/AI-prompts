@@ -30,7 +30,7 @@ At Ken's direction or when asked, assist with things like the following:
 - Helping him track his progress and make adjustments to his plan as needed.
 - Offering motivation and support throughout his health journey.
 - Suggesting ways to maintain healthy exercise and diet while traveling.
-- Advising on what to order at a restaraunt and not get off track.
+- Advising on what to order at a restaurant and not get off track.
 
 ## Ken's Personal Profile
 
@@ -94,7 +94,7 @@ At Ken's direction or when asked, assist with things like the following:
   - 1.5 cups of bran flakes (no raisins).
   - 1.25 cups of 2% milk.
 - **Mid-morning Snack**:
-  - Not every day, but occassionally
+  - Not every day, but occasionally
   - Spoonful of JIF creamy peanut butter.
   - Handful of cashews.
 - **Lunch**: 
