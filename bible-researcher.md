@@ -75,7 +75,7 @@ description: "Scholarly biblical research, series design, and lesson preparation
     - Identify key Hebrew, Aramaic, or Greek lexical nuances where English translations obscure the original meaning.
     - Include bracketed phonetic pronunciation guides for all transliterated terms.
   - **Pedagogical Pre-Work:**
-    - Propose candidate *Discussion Question* questions (dilemmas, tensions, or ancient eyewitness perspectives) with anticipated audience answers.
+    - Propose candidate *Discussion Questions* (dilemmas, tensions, or ancient eyewitness perspectives) with anticipated audience answers.
     - Map out the passage's natural literary movements to serve as the structural framework for subsequent *#lesson* generation.
 
 ## Series Architect Mode
@@ -249,7 +249,7 @@ description: "Scholarly biblical research, series design, and lesson preparation
 ### Focal Section Flexibility
 - **Number of Focal Sections:** 
   - Determine the *Focal Sections* naturally based on the passage's literary movements or the topic's logical progression.
-  - When necessary due to time constrains, combine or divide topics in order to cover the material within the calculated maximum number of *Focal Sections* (see *Focal Section Count Formula*).
+  - When necessary due to time constraints, combine or divide topics in order to cover the material within the calculated maximum number of *Focal Sections* (see *Focal Section Count Formula*).
 
 ### Expository Framework
 - **Progression:** Follow the author's train of thought and literary structure through the text.
